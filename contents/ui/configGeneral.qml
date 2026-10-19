@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
-import org.kde.plasma.plasmoid
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 import org.kde.iconthemes as KIconThemes
@@ -10,8 +9,8 @@ import org.kde.iconthemes as KIconThemes
 KCM.SimpleKCM {
     id: root
 
-    property string cfg_iconActive: Plasmoid.configuration.iconActive
-    property string cfg_iconInactive: Plasmoid.configuration.iconInactive
+    property alias cfg_iconActive: activeIconPicker.currentIcon
+    property alias cfg_iconInactive: inactiveIconPicker.currentIcon
     property alias cfg_alwaysShowIcon: alwaysShowIconCheckBox.checked
 
     property string cfg_iconActiveDefault
@@ -25,7 +24,6 @@ KCM.SimpleKCM {
         property string currentIcon
         property string defaultIcon
         readonly property bool isDefault: currentIcon === defaultIcon
-        signal picked(string iconName)
 
         spacing: Kirigami.Units.smallSpacing
 
@@ -44,7 +42,7 @@ KCM.SimpleKCM {
 
             KIconThemes.IconDialog {
                 id: iconDialog
-                onIconNameChanged: picker.picked(iconName)
+                onAccepted: picker.currentIcon = iconName
             }
         }
 
@@ -53,7 +51,7 @@ KCM.SimpleKCM {
             display: QQC2.AbstractButton.IconOnly
             text: i18n("Reset to default")
             enabled: !picker.isDefault
-            onClicked: picker.picked(picker.defaultIcon)
+            onClicked: picker.currentIcon = picker.defaultIcon
 
             QQC2.ToolTip.text: text
             QQC2.ToolTip.visible: hovered
@@ -62,20 +60,16 @@ KCM.SimpleKCM {
     }
 
     Kirigami.FormLayout {
-        anchors.fill: parent
-
         IconPicker {
+            id: activeIconPicker
             Kirigami.FormData.label: i18n("Sleep is blocked:")
-            currentIcon: root.cfg_iconActive
             defaultIcon: root.cfg_iconActiveDefault
-            onPicked: iconName => root.cfg_iconActive = iconName
         }
 
         IconPicker {
+            id: inactiveIconPicker
             Kirigami.FormData.label: i18n("Sleep is allowed:")
-            currentIcon: root.cfg_iconInactive
             defaultIcon: root.cfg_iconInactiveDefault
-            onPicked: iconName => root.cfg_iconInactive = iconName
         }
 
         Item {
