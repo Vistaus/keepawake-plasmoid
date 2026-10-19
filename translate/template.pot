@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Keep Awake package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Keep Awake\n"
+"Report-Msgid-Bugs-To: https://github.com/moxwel/keepawake-plasmoid/issues\n"
+"POT-Creation-Date: 2026-10-19 01:25-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: contents/config/config.qml:6
+msgid "General"
+msgstr ""
+
+#: contents/ui/configGeneral.qml:34
+msgid "Choose icon"
+msgstr ""
+
+#: contents/ui/configGeneral.qml:53
+msgid "Reset to default"
+msgstr ""
+
+#: contents/ui/configGeneral.qml:66
+msgid "Sleep is blocked:"
+msgstr ""
+
+#: contents/ui/configGeneral.qml:72
+msgid "Sleep is allowed:"
+msgstr ""
+
+#: contents/ui/configGeneral.qml:82
+msgid "Visibility:"
+msgstr ""
+
+#: contents/ui/configGeneral.qml:83
+msgid "Always show icon"
+msgstr ""
+
+#: contents/ui/configGeneral.qml:87
+msgid "Keep the icon in the panel, even when sleep is allowed."
+msgstr ""
+
+#: contents/ui/main.qml:24
+msgid "Keep Awake widget"
+msgstr ""
+
+#: contents/ui/main.qml:44
+msgid "Sleep and screen locking are blocked"
+msgstr ""
+
+#: contents/ui/main.qml:45
+msgid "Sleep and screen locking are allowed"
+msgstr ""
