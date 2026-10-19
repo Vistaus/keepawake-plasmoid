@@ -31,6 +31,7 @@ KCM.SimpleKCM {
             implicitWidth: Kirigami.Units.iconSizes.large + Kirigami.Units.largeSpacing * 2
             implicitHeight: implicitWidth
 
+            Accessible.name: i18n("Choose icon")
             onClicked: iconDialog.open()
 
             Kirigami.Icon {

@@ -29,7 +29,15 @@ PlasmoidItem {
         id: inhibition
     }
 
+    Connections {
+        target: Plasmoid
+        function onActivated(): void {
+            root.toggleAwake();
+        }
+    }
+
     preferredRepresentation: compactRepresentation
+    activationTogglesExpanded: false
     fullRepresentation: Item {}  // no popup: clicking just toggles
 
     toolTipMainText: Plasmoid.title
@@ -46,7 +54,20 @@ PlasmoidItem {
             source: root.isAwakeEnabled ? Plasmoid.configuration.iconActive : Plasmoid.configuration.iconInactive
 
             opacity: root.isAwakeEnabled ? 1.0 : root.idleOpacity
-            active: mouseArea.containsMouse
+            active: mouseArea.containsMouse || activeFocus
+
+            activeFocusOnTab: true
+            Accessible.name: Plasmoid.title
+            Accessible.description: root.toolTipSubText
+            Accessible.role: Accessible.Button
+            Accessible.onPressAction: root.toggleAwake()
+
+            Keys.onPressed: event => {
+                const isActivationKey = [Qt.Key_Space, Qt.Key_Enter, Qt.Key_Return, Qt.Key_Select].includes(event.key);
+                if (!isActivationKey) return;
+                root.toggleAwake();
+                event.accepted = true;
+            }
 
             MouseArea {
                 id: mouseArea
