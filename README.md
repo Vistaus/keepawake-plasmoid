@@ -21,6 +21,12 @@ It hooks into Plasma's battery/brightness applet's `InhibitionControl` instead o
 
 ## Install
 
+### KDE Store / Plasma Add-ons / OpenDesktop.org
+
+Search for **"Keep Awake"** in *Add or Manage Widgets...* > *Get New* > *Download New Plasma Widgets...*.
+
+Or download [Keep Awake Plasmoid](https://www.opendesktop.org/p/2379674) from KDE Store/OpenDesktop.org.
+
 ### GitHub Releases
 
 Download the [latest release](https://github.com/moxwel/keepawake-plasmoid/releases/latest/download/keepawake.plasmoid).
