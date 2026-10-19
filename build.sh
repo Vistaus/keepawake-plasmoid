@@ -18,8 +18,8 @@ OUTPUT="build/keepawake.plasmoid"
 echo "Building $PLUGIN_ID..."
 rm -rf "$PACKAGE_DIR" "$OUTPUT"
 mkdir -p "$PACKAGE_DIR"
-cp -r metadata.json contents "$PACKAGE_DIR/"
+cp -r metadata.json contents LICENSE "$PACKAGE_DIR/"
 translate/compile.sh "$PACKAGE_DIR"
 
-(cd "$PACKAGE_DIR" && zip -qr ../keepawake.plasmoid metadata.json contents)
+(cd "$PACKAGE_DIR" && zip -qr ../keepawake.plasmoid metadata.json contents LICENSE)
 echo "Built $OUTPUT"
