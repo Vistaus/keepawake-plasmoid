@@ -21,6 +21,16 @@ It hooks into Plasma's battery/brightness applet's `InhibitionControl` instead o
 
 ## Install
 
+### GitHub Releases
+
+Download the [latest release](https://github.com/moxwel/keepawake-plasmoid/releases/latest/download/keepawake.plasmoid).
+
+Install `keepawake.plasmoid` from *Add or Manage Widgets...* > *Get New* > *Install Widget From Local File...*.
+
+Restart plasmashell or log out and back in if it does not appear immediately.
+
+### Manual
+
 ```sh
 ./install.sh
 ```
